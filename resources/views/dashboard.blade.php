@@ -1,49 +1,17 @@
-@extends('layouts.master')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+    </x-slot>
 
-@section('sidebar')
-    @include('sidebar')
-
-
-{{-- <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-    <div class="position-sticky pt-3">
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{route('dashboard')}}">
-            <span data-feather="home"></span>
-            Dashboard
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('home_service_index')}}">
-            <span data-feather="file"></span>
-            Home Service All
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('home_service_create')}}">
-            <span data-feather="file"></span>
-            Home Service Create
-          </a>
-        </li>
-
-
-      </ul>
-
-      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-        <span>Saved reports</span>
-        <a class="link-secondary" href="#" aria-label="Add a new report">
-          <span data-feather="plus-circle"></span>
-        </a>
-      </h6>
-      <ul class="nav flex-column mb-2">
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span data-feather="file-text"></span>
-            Current month
-          </a>
-        </li>
-
-      </ul>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    {{ __("You're logged in dashbord route !") }}
+                </div>
+            </div>
+        </div>
     </div>
-  </nav> --}}
-@endsection
+</x-app-layout>
