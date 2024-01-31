@@ -27,10 +27,17 @@ Route::get('/admin', function () {
 })->middleware(['auth', 'verified','role:admin'])->name('admin.index');
 
 
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('younus');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/younus', function () {
+    return view('younus');
+})->middleware(['auth', 'verified'])->name('younus');
 
 Route::get('/adminlte', function () {
     return view('adminlte');
