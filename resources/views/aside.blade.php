@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="/" class="brand-link">
+      <img src="{{ asset('dist/img/logo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Dream Diver</span>
     </a>
 
@@ -61,8 +61,8 @@
           @role('admin')
 
 
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Home: Service Section
@@ -82,6 +82,85 @@
                   <p>Home Service Create</p>
                 </a>
               </li>
+
+
+            </ul>
+          </li>
+
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="nav-icon fas fas fa-fill"></i>
+              <p>
+                Projects
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('projects.index')}}" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Project All</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('projects.create')}}" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Project Create</p>
+                </a>
+              </li>
+
+
+            </ul>
+          </li>
+
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class=" nav-icon fas fa-fill-drip"></i>
+              <p>
+                Project Single view
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('projects.index')}}" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Project All</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('projects.create')}}" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Project Create</p>
+                </a>
+              </li>
+
+
+            </ul>
+          </li>
+
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="nav-icon fas fa-question"></i>
+              <p>
+                FAQ
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('faqs.index')}}" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>FAQs All</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('faqs.create')}}" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>FAQ Create</p>
+                </a>
+              </li>
+
 
             </ul>
           </li>

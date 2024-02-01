@@ -8,24 +8,16 @@ use App\Models\HomeService;
 class HomeServiceController extends Controller
 {
 
-    // public function index(){
-    //     $home_services = Homeservice::all();
-    //     return view('home_services.index', compact('home_services'));
-    // }
 
     public function index(){
         $home_services = Homeservice::all();
-        return view('home_services2.index', compact('home_services'));
+        return view('home_services.index', compact('home_services'));
     }
 
-    // public function create()
-    // {
-    //     return view('home_services.create');
-    // }
 
     public function create()
     {
-        return view('home_services2.create');
+        return view('home_services.create');
     }
 
 
@@ -54,6 +46,7 @@ class HomeServiceController extends Controller
 
         return redirect()->back()->with('success', 'Home service created successfully!');
     }
+
 
 
     public function edit($id)
