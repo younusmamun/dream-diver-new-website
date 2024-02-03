@@ -42,12 +42,14 @@ Route::group(['middleware' => ['auth', 'verified', 'role:admin']], function () {
     Route::put('/home_service_update/{id}', [HomeServiceController::class, 'update'])->name('home_service_update');
     Route::put('/home_service_destroy/{id}', [HomeServiceController::class, 'destroy'])->name('home_service_destroy');
 
-
-    Route::resource('projects', ProjectController::class);
     Route::resource('projectsingle', ProjectsinglepageController::class);
     Route::get('/projectsingle_edit/{id}', [ProjectsinglepageController::class, 'edit'])->name('projectsingle_edit');
-    Route::get('/projectsingle_update/{id}', [ProjectsinglepageController::class, 'update'])->name('projectsingle_update');
+    Route::put('/projectsingle_update/{id}', [ProjectsinglepageController::class, 'update'])->name('projectsingle_update');
     Route::put('/projectsingle_destroy/{id}', [ProjectsinglepageController::class, 'destroy'])->name('projectsingle_destroy');
+
+
+    Route::resource('projects', ProjectController::class);
+
 
     Route::resource('faqs', FaqController::class);
 
