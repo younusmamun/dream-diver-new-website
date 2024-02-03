@@ -1,5 +1,6 @@
 @extends('layouts.master')
 
+
 @section('content')
 <div class="content-wrapper" style="min-height: 320.4px;">
     <!-- Content Header (Page header) -->
@@ -7,12 +8,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Home page all services</h1>
+            <h1 class="m-0">FAQ All</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Home page all services</li>
+              <li class="breadcrumb-item active">FAQ All</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -25,15 +26,13 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-
             <div class="col-lg-12">
                 <table class="table">
                     <thead>
                       <tr>
                         <th scope="col">sl</th>
-                        {{-- <th scope="col">section title</th> --}}
-                        <th scope="col">service title</th>
-                        <th scope="col">service image</th>
+                        <th scope="col">FAQ Question title</th>
+                        <th scope="col">FAQ Answer</th>
                         <th scope="col">status</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
@@ -44,17 +43,18 @@
                         @php
                             $sl = 1;
                         @endphp
-                        @foreach ($home_services as $service )
+                        @foreach ($faqs as $faq )
                       <tr>
                         <th scope="row">{{ $sl++ }}</th>
-                        {{-- <td>{{ $service->section_title; }}</td> --}}
-                        <td>{{ $service->service_title; }}</td>
-                        <td>{{ $service->service_image; }}</td>
-                        <td>{{ $service->status; }}</td>
-                        <td><a href="{{ route('home_service_edit', ['id' => $service->id]) }}">edit</a></td>
-                        <td><form action="{{ route('home_service_destroy', ['id' => $service->id]) }}" method="POST">
+                        <td>{{ $faq->faq_question; }}</td>
+                        <td>{{ $faq->faq_answer; }}</td>
+                        <td>{{ $faq->status; }}</td>
+                        {{-- <td><a href="{{ route('projects.edit', ['id' => $project->id]) }}">edit</a></td> --}}
+                        <td><a href="{{ route('faqs.edit', ['faq' => $faq->id]) }}">edit</a></td>
+
+                        <td><form action="{{ route('faqs.destroy', ['faq' => $faq->id]) }}" method="POST">
                             @csrf
-                            @method('PUT')
+                            @method('DELETE')
                             <p>
                                 <button type="submit">Delete</button> <br>
                             </p>
@@ -65,8 +65,6 @@
                     </tbody>
                   </table>
             </div>
-
-
         </div>
         <!-- /.row -->
 
@@ -75,9 +73,4 @@
     <!-- /.content -->
   </div>
 
-
-
 @endsection
-
-
-

@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeServiceController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProjectsinglepageController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\TicketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,8 @@ Route::group(['middleware' => ['auth', 'verified', 'role:admin']], function () {
 
 
     Route::resource('faqs', FaqController::class);
+
+    Route::resource('tickets', TicketController::class);
 
 });
 

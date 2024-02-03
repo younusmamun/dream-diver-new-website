@@ -178,14 +178,14 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('faqs.index')}}" class="nav-link ">
+                <a href="{{route('tickets.index')}}" class="nav-link ">
 
                   <i class="nav-icon fas fa-angle-right"></i>
                   <p>Ticket All</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('faqs.create')}}" class="nav-link ">
+                <a href="{{route('tickets.create')}}" class="nav-link ">
                     <i class="nav-icon fas fa-angle-right"></i>
                   <p>Ticket Show</p>
                 </a>
