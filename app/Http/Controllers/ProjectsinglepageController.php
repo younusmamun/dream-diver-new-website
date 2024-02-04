@@ -92,9 +92,39 @@ class ProjectsinglepageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $projectsingle)
+    public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $project = Projectsinglepage::findOrFail($id);
+
+        $filename_path = null;
+        if (isset($data['project_cover_photo']) && $data['project_cover_photo']) {
+            $file = $data['project_cover_photo'];
+
+            $name = $file->getClientOriginalName();
+            $extension = $file->getClientOriginalExtension();
+            $filename = pathinfo($name, PATHINFO_FILENAME) . time() . '.' . $extension;
+            $filename_path = request()->file('project_cover_photo')->storeAs('projects_cover_photo', $filename);
+        }
+
+
+
+        $project->project_id = $data['project_id'];
+        $project->project_cover_photo = $filename_path;
+        $project->project_title = $data['project_title'];
+        $project->project_description = $data['project_description'];
+        $project->project_short_description = $data['project_short_description'];
+        $project->project_video_link = $data['project_video_link'];
+        $project->project_link = $data['project_link'];
+        $project->project_client_review = $data['project_client_review'];
+        $project->project_client_video_review = $data['project_client_video_review'];
+        $project->status = $data['status'];
+        $project->save();
+
+
+
+        return redirect()->back()->with('success', 'Project Single page Updated successfully!');
     }
 
     /**
