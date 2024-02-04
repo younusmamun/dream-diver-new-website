@@ -7,6 +7,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProjectsinglepageController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\TickethistoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,9 +55,16 @@ Route::group(['middleware' => ['auth', 'verified', 'role:admin']], function () {
 
     Route::resource('faqs', FaqController::class);
 
-    Route::resource('tickets', TicketController::class);
+    // Route::resource('tickets', TicketController::class);
+    // Route::post('/tickethistory_store', [TickethistoryController::class, 'store'])->name('tickethistory_store');
 
 });
+
+Route::resource('tickets', TicketController::class);
+Route::post('/tickethistory_store', [TickethistoryController::class, 'store'])->name('tickethistory_store');
+
+
+
 
 // Route::resource('projects', ProjectController::class);
 // Route::resource('projectsingle', ProjectsinglepageController::class);

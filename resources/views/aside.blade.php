@@ -167,6 +167,14 @@
           </li>
 
 
+
+
+          @endrole
+
+
+
+
+
           <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-ticket-alt"></i>
@@ -187,7 +195,7 @@
               <li class="nav-item">
                 <a href="{{route('tickets.create')}}" class="nav-link ">
                     <i class="nav-icon fas fa-angle-right"></i>
-                  <p>Ticket Show</p>
+                  <p>Ticket Create</p>
                 </a>
               </li>
 
@@ -195,8 +203,6 @@
             </ul>
 
           </li>
-
-          @endrole
 
 
         </ul>

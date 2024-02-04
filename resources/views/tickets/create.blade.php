@@ -32,12 +32,17 @@
                 @csrf
 
                 <div class="col-12">
-                    <label for="inputAddress2" class="form-label">FAQ Question</label>
-                    <input type="text"  name="faq_question"  class="form-control" id="inputAddress2" placeholder="">
+                    <label for="inputAddress2" class="form-label">Ticket creator Id (hide)</label>
+                    <input type="text"  name="ticket_creator_id"  class="form-control" id="inputAddress2" value="{{ auth()->user()->id }}" placeholder="" readonly>
+                </div>
+
+                <div class="col-12">
+                    <label for="inputAddress2" class="form-label">User Email</label>
+                    <input type="text"  name="email"  class="form-control" id="inputAddress2" value="{{ auth()->user()->email }}" placeholder="" readonly>
                 </div>
                 <div class="col-12">
-                    <label for="inputAddress2" class="form-label">FAQ Answer </label>
-                    <input type="text"  name="faq_answer"  class="form-control" id="inputAddress2" placeholder="">
+                    <label for="inputAddress2" class="form-label">Issue </label>
+                    <input type="text"  name="issue"  class="form-control" id="inputAddress2" placeholder="">
                 </div>
 
                 <div class="col-12">

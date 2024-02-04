@@ -31,8 +31,8 @@
                     <thead>
                       <tr>
                         <th scope="col">sl</th>
-                        <th scope="col">FAQ Question title</th>
-                        <th scope="col">FAQ Answer</th>
+                        <th scope="col">Ticket user email</th>
+                        <th scope="col">Issue</th>
                         <th scope="col">status</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
@@ -43,16 +43,16 @@
                         @php
                             $sl = 1;
                         @endphp
-                        @foreach ($faqs as $faq )
+                        @foreach ($tickets as $ticket )
                       <tr>
                         <th scope="row">{{ $sl++ }}</th>
-                        <td>{{ $faq->faq_question; }}</td>
-                        <td>{{ $faq->faq_answer; }}</td>
-                        <td>{{ $faq->status; }}</td>
+                        <td>{{ $ticket->email; }}</td>
+                        <td>{{ $ticket->issue; }}</td>
+                        <td>{{ $ticket->status; }}</td>
                         {{-- <td><a href="{{ route('projects.edit', ['id' => $project->id]) }}">edit</a></td> --}}
-                        <td><a href="{{ route('faqs.edit', ['faq' => $faq->id]) }}">edit</a></td>
+                        <td><a href="{{ route('tickets.edit', ['ticket' => $ticket->id]) }}">edit</a></td>
 
-                        <td><form action="{{ route('faqs.destroy', ['faq' => $faq->id]) }}" method="POST">
+                        <td><form action="{{ route('tickets.destroy', ['ticket' => $ticket->id]) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <p>
