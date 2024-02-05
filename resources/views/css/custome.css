@@ -1,0 +1,27 @@
+/*** Contact page header css ***/
+.top-bottom{
+    padding: 15px 0px;
+   
+}
+/*** Footer css ***/
+.text-highlight {
+ color:#000000;
+}
+
+.bg-lighter {
+    background-color: #0E63C8;
+}
+.text-primaryer {
+    color: white;
+}
+.bg-light-x {
+    background-color: black;
+}
+.bg-light-in {
+    background-color: #22518D;
+}
+.bg-light-gram {
+    background-color: #B20F66;
+}
+
+

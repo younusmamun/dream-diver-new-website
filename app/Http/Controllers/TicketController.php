@@ -19,6 +19,14 @@ class TicketController extends Controller
         return view('tickets.index', compact('tickets'));
     }
 
+    public function myticket()
+    {
+        $ticket_creator_id = auth()->user()->id; // Use auth() instead of auth->
+        $my_tickets = Ticket::where('ticket_creator_id', $ticket_creator_id)->get();
+
+        return view('tickets.myticket', compact('my_tickets'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

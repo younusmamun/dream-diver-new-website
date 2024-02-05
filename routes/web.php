@@ -63,6 +63,9 @@ Route::group(['middleware' => ['auth', 'verified', 'role:admin']], function () {
 Route::resource('tickets', TicketController::class);
 Route::post('/tickethistory_store', [TickethistoryController::class, 'store'])->name('tickethistory_store');
 
+Route::get('/myticket', [TicketController::class, 'myticket'])->name('myticket');
+
+
 
 
 

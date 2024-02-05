@@ -192,6 +192,15 @@
                   <p>Ticket All</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="{{route('myticket')}}" class="nav-link ">
+
+                  <i class="nav-icon fas fa-angle-right"></i>
+                  <p>My Ticket</p>
+                </a>
+              </li>
+
               <li class="nav-item">
                 <a href="{{route('tickets.create')}}" class="nav-link ">
                     <i class="nav-icon fas fa-angle-right"></i>
